@@ -41,8 +41,14 @@ def teste():
 	dois = int(request.args.get('dois', '0') or '0', 10)
 	tres = int(request.args.get('tres', '0') or '0', 10)
 	quatro = int(request.args.get('quatro', '0') or '0', 10)
-	lista = [ um*2, dois*2, tres*2, quatro*2 ]
-	return jsonify(lista)
+	cinco = int(request.args.get('cinco', '0') or '0', 10)
+	seis = int(request.args.get('seis', '0') or '0', 10)
+	return jsonify(	um=um,
+					dois=dois,
+					tres=tres,
+					quatro=quatro,
+					cinco=cinco,
+					seis=seis)
 		
 if __name__ == "__main__":
 	port = int(os.environ.get("PORT", 5000))
