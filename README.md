@@ -23,7 +23,7 @@
     }
     ```
     - Você receberá como resposta algo como: `{"auth":true,"token":"XXX","message":"Logged in succesfully."}`
-    - Copie esse token para uma variável no header `access-token`
+    - Copie esse token para uma variável no header `Authorization`, na seguinte forma: "Bearer " + token. Exemplo: `Bearer XXX`
 - Tente realizar GET novamente, com parâmetros de teste: `localhost:5000/teste?um=1&dois=2&tres=3&quatro=4`
 
 **Criando o server no heroku:**
