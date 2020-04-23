@@ -2,3 +2,4 @@ flask
 virtualenv
 python-dotenv
 gunicorn
+flask_jwt_extended
