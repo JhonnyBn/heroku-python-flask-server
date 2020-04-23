@@ -24,17 +24,17 @@ def index():
 @app.route('/login', methods=['POST'])
 def login():
     if not request.is_json:
-        return jsonify({ "auth": False, "token": None, "message": "Missing JSON in request" }), 400
+        return jsonify({ "auth": False, "token": None, "message": "Missing JSON in request" }), 200
 
     username = request.json.get('user', None)
     password = request.json.get('pwd', None)
     if not username:
-        return jsonify({ "auth": False, "token": None, "message": "Missing username parameter"}), 400
+        return jsonify({ "auth": False, "token": None, "message": "Missing username parameter"}), 200
     if not password:
-        return jsonify({ "auth": False, "token": None, "message": "Missing password parameter"}), 400
+        return jsonify({ "auth": False, "token": None, "message": "Missing password parameter"}), 200
 
     if username != 'admin' or password != 'admin':
-        return jsonify({ "auth": False, "token": None, "message": "Bad username or password"}), 401
+        return jsonify({ "auth": False, "token": None, "message": "Bad username or password"}), 200
 
     # Identity can be any data that is json serializable
     access_token = create_access_token(identity=username)
